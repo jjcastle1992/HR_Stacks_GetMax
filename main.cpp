@@ -39,17 +39,27 @@ vector<int> getMax(vector<string> operations) {
         }
         type = stoi(tempType);
         data = stoi(tempData);
+
+        //Build switch to handle queries
+        switch (type) {
+            //Push Case
+            case 1:
+                answers.push_back(data);
+                break;
+            //Pop Case
+            case 2:
+                answers.pop_back();
+                break;
+            //Pop Case
+            case 3:
+                for (int k = 0; k < answers.size(); k++) {
+                    std::cout << answers[k] << std::endl;
+                }
+                break;
+            default:
+                std::cout << "ERROR: query type invalid. Should be [1,3]" << std::endl;
+        }
     }
-
-
-    //Build switch to handle queries
-
-    //Push Case
-
-    //Pop Case
-
-    //Print Case
-
     return answers;
 }
 
