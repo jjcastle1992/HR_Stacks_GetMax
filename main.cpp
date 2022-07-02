@@ -19,19 +19,36 @@ string rtrim(const string &);
 
 vector<int> getMax(vector<string> operations) {
     vector<int> answers;
+    int type = 0;
+    int data = 0;
     /* Query Types:
         1    -Push the element x into the stack.
         2    -Delete the element present at the top of the stack.
         3    -Print the maximum element in the stack.
      */
-        //Build switch to handle queries
 
-        //Push Case
+    //Parse string into query type and payload.
+    for (int i = 0; i < operations.size(); i++) {
+        vector<string> tempString;
+        tempString.push_back(operations[i]);
+        string tempType = tempString[0];
+        string tempData = "";
+        int j = 2;
+        while (!tempString.empty()) {
+            tempData += tempString[j];
+            j++;
+        }
+    }
 
-        //Pop Case
 
-        //Print Case
-        
+    //Build switch to handle queries
+
+    //Push Case
+
+    //Pop Case
+
+    //Print Case
+
     return answers;
 }
 
