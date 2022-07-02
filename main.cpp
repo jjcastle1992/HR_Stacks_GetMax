@@ -33,13 +33,14 @@ vector<int> getMax(vector<string> operations) {
         tempString = operations[i];
         string tempType = "";
         tempType = tempString[0];
-        string tempData = "";
-        for (int j = 2; j < tempString.size(); j++) {
-            tempData += tempString[j];
-        }
         type = stoi(tempType);
-        data = stoi(tempData);
-
+        string tempData = "";
+        if (tempString.size() > 1 ) {
+            for (int j = 2; j < tempString.size(); j++) {
+                tempData += tempString[j];
+            }
+            data = stoi(tempData);
+        }
         //Build switch to handle queries
         switch (type) {
             //Push Case
