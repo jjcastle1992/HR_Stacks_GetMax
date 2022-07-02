@@ -35,6 +35,7 @@ vector<int> getMax(vector<string> operations) {
         tempType = tempString[0];
         type = stoi(tempType);
         string tempData = "";
+        int maxValue = 0;
         if (tempString.size() > 1 ) {
             for (int j = 2; j < tempString.size(); j++) {
                 tempData += tempString[j];
@@ -51,11 +52,14 @@ vector<int> getMax(vector<string> operations) {
             case 2:
                 answers.pop_back();
                 break;
-            //Pop Case
+            //Pop Case - Modify to only print Max
             case 3:
                 for (int k = 0; k < answers.size(); k++) {
-                    std::cout << answers[k] << std::endl;
+                    if (answers[k] > maxValue) {
+                        maxValue = answers[k];
+                    }
                 }
+                std::cout << maxValue << std::endl;
                 break;
             default:
                 std::cout << "ERROR: query type invalid. Should be [1,3]" << std::endl;
