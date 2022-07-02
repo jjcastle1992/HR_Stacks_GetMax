@@ -18,7 +18,21 @@ string rtrim(const string &);
  */
 
 vector<int> getMax(vector<string> operations) {
+    vector<int> answers;
+    /* Query Types:
+        1    -Push the element x into the stack.
+        2    -Delete the element present at the top of the stack.
+        3    -Print the maximum element in the stack.
+     */
+        //Build switch to handle queries
 
+        //Push Case
+
+        //Pop Case
+
+        //Print Case
+        
+    return answers;
 }
 
 int main()
