@@ -21,6 +21,7 @@ vector<int> getMax(vector<string> operations) {
     vector<int> answers;
     int type = 0;
     int data = 0;
+    string tempString = "";
     /* Query Types:
         1    -Push the element x into the stack.
         2    -Delete the element present at the top of the stack.
@@ -29,15 +30,15 @@ vector<int> getMax(vector<string> operations) {
 
     //Parse string into query type and payload.
     for (int i = 0; i < operations.size(); i++) {
-        vector<string> tempString;
-        tempString.push_back(operations[i]);
-        string tempType = tempString[0];
+        tempString = operations[i];
+        string tempType = "";
+        tempType = tempString[0];
         string tempData = "";
-        int j = 2;
-        while (!tempString.empty()) {
+        for (int j = 2; j < tempString.size(); j++) {
             tempData += tempString[j];
-            j++;
         }
+        type = stoi(tempType);
+        data = stoi(tempData);
     }
 
 
